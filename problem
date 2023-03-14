@@ -1,0 +1,19 @@
+import pymongo 
+client = pymongo.MongoClient("mongodb+srv://mahendragharad035:<mahendra>@cluster0.xdwsiqj.mongodb.net/?retryWrites=true&w=majority")
+db = client.test
+print(db)
+
+database = client['My_database']
+# It is the database 
+
+coll = database['first_DB']
+# it is the collection where we store the data 
+# (simply it is the collection ('first_DB'))
+
+data = { "Batch name " : " Full stack data science 2.0 ",
+         "Name " : "Mahendra",
+         "Dream " : "To become datascientist"
+}
+# document or actual data which i would like to insert 
+
+coll.insert_one(data)
